@@ -8,7 +8,6 @@ ORIGENS=(
     "/home/jms/.bash_aliases"
     "/home/jms/.git-credentials"
     "/home/jms/.gitconfig"
-    "/home/jms/Área de trabalho/Concurso"
     "/home/jms/Área de trabalho/Scripts/setup.sh"
     "/home/jms/Área de trabalho/Temporário"
     "/home/jms/Documentos"

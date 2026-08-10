@@ -56,17 +56,15 @@ backup_itens=(
     "/media/jms/Backup/.bash_aliases|/home/jms/.bash_aliases|arquivo"
     "/media/jms/Backup/.git-credentials|/home/jms/.git-credentials|arquivo"
     "/media/jms/Backup/.gitconfig|/home/jms/.gitconfig|arquivo"
-    "/media/jms/Backup/Documentos/custom.cfg|/boot/grub/custom.cfg|arquivo"
     "/media/jms/Backup/Documentos|/home/jms/Documentos|conteudo"
     "/media/jms/Backup/Imagens|/home/jms/Imagens|conteudo"
     "/media/jms/Backup/Modelos|/home/jms/Modelos|conteudo"
-    "/media/jms/Backup/Concurso|/home/jms/Área de trabalho|pasta"
-    "/media/jms/Backup/Concurso|/home/jms/Área de trabalho/Temporário|pasta"
 )
 
 comandos_avulsos=(
     "rm /home/jms/.face"
     "rm /home/jms/.face.icon"
+    "mkdir /home/joao/Área de trabalho/Biblioteca do calibre"
 )
 
 log() {
