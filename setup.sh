@@ -59,6 +59,7 @@ backup_itens=(
     "/media/jms/Backup/Documentos|/home/jms/Documentos|conteudo"
     "/media/jms/Backup/Imagens|/home/jms/Imagens|conteudo"
     "/media/jms/Backup/Modelos|/home/jms/Modelos|conteudo"
+    "/media/jms/Backup/Temporário|/home/jms/Área de tranalho|pasta"
 )
 
 comandos_avulsos=(
