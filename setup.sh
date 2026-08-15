@@ -12,14 +12,12 @@ pacotes=(
     ghostwriter
     git
     kcolorchooser
-    kleopatra
     kolourpaint
     libreoffice-l10n-pt-br
     lolcat
     mkvtoolnix
     qbittorrent
     rsync
-    texlive
     thunderbird
     vlc
     wget
@@ -58,7 +56,7 @@ backup_itens=(
     "/media/jms/Backup/Documentos|/home/jms/Documentos|conteudo"
     "/media/jms/Backup/Imagens|/home/jms/Imagens|conteudo"
     "/media/jms/Backup/Modelos|/home/jms/Modelos|conteudo"
-    "/media/jms/Backup/Temporário|/home/jms/Área de tranalho|pasta"
+    "/media/jms/Backup/Temporário|/home/jms/Área de trabalho|pasta"
 )
 
 comandos_avulsos=(
