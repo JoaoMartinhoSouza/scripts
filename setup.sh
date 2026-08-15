@@ -7,7 +7,6 @@ pacotes=(
     cowsay
     curl
     exiftool
-    fastfetch
     ffmpeg
     fortune
     ghostwriter
@@ -80,7 +79,7 @@ checar_root() {
     fi
 }
 
-instalar_pacotes_fn() {
+instalar_pacotes() {
     log "Atualizando lista de pacotes..."
     apt update
 
@@ -88,7 +87,7 @@ instalar_pacotes_fn() {
     apt install -y "${pacotes[@]}"
 }
 
-remover_pacotes_fn() {
+remover_pacotes() {
     log "Removendo pacotes desnecessários..."
     apt purge -y "${pacotes_remover[@]}"
 
