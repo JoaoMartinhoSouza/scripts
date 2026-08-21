@@ -46,6 +46,7 @@ backup_itens=(
     "/media/jms/Backup/.git-credentials|/home/jms/.git-credentials|arquivo"
     "/media/jms/Backup/.gitconfig|/home/jms/.gitconfig|arquivo"
     "/media/jms/Backup/Documentos|/home/jms/Documentos|conteudo"
+    "/media/jms/Backup/Documentos/custom.cfg|/boot/grub/custom.cfg|arquivo"
     "/media/jms/Backup/Imagens|/home/jms/Imagens|conteudo"
     "/media/jms/Backup/Modelos|/home/jms/Modelos|conteudo"
     "/media/jms/Backup/Temporário|/home/jms/Área de trabalho|pasta"
