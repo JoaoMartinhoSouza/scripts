@@ -3,6 +3,7 @@
 set -euo pipefail
 
 pacotes=(
+    apostrophe
     cowsay
     curl
     deluge
