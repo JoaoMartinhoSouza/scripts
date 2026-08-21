@@ -3,50 +3,41 @@
 set -euo pipefail
 
 pacotes=(
-    calibre
     cowsay
     curl
+    deluge
     exiftool
     ffmpeg
     fortune
-    ghostwriter
+    gcolor3
     git
-    kcolorchooser
-    kolourpaint
+    imagemagick
     libreoffice-l10n-pt-br
     lolcat
     mkvtoolnix
-    qbittorrent
     rsync
-    thunderbird
-    vlc
     wget
+    xmlstarlet
 )
 
 pacotes_remover=(
-    akregator
-    dragonplayer
-    gimp
-    imagemagick
-    juk
-    kaddressbook
-    kdeconnect
-    kfind
-    khelpcenter
-    kmail
-    kmag
-    kmousetool
-    kmouth
-    konqueror
-    kontrast
-    korganizer
-    plasma-welcome
-    xterm
+	evolution
+	gnome-clocks
+	gnome-contacts
+	gnome-maps
+	gnome-music
+	gnome-snapshot
+	gnome-sound-recorder
+	gnome-tour
+	gnome-tweaks
+	gnome-weather
+	shotwell
 )
 
 repositorios=(
-    "https://github.com/JoaoMartinhoSouza/scripts.git|/home/jms/Área de trabalho/Scripts"
-    "https://github.com/JoaoMartinhoSouza/joaomartinhosouza.github.io.git|/home/jms/Área de trabalho/Página pessoal"
+	"https://github.com/JoaoMartinhoSouza/epub-cleaner.git|/home/jms/Área de trabalho/Epub Cleaner"
+    	"https://github.com/JoaoMartinhoSouza/joaomartinhosouza.github.io.git|/home/jms/Área de trabalho/Página pessoal"
+    	"https://github.com/JoaoMartinhoSouza/scripts.git|/home/jms/Área de trabalho/Scripts"
 )
 
 backup_itens=(
@@ -59,10 +50,15 @@ backup_itens=(
     "/media/jms/Backup/Temporário|/home/jms/Área de trabalho|pasta"
 )
 
+gsettings=(
+	"gsettings set org.gnome.desktop.interface clock-show-weekday true"
+	"gsettings set org.gnome.mutter center-new-windows true"
+	"gsettings set org.gnome.desktop.wm.preferences action-right-click-titlebar 'toggle-maximize'"
+)
+
 comandos_avulsos=(
     "rm /home/jms/.face"
     "rm /home/jms/.face.icon"
-    "mkdir /home/joao/Área de trabalho/Biblioteca do calibre"
 )
 
 log() {
@@ -169,6 +165,15 @@ configurar_sudo() {
     chmod 440 "$defaults_file"
 }
 
+aplicar_gsettings() {
+    log "Aplicando configurações do GNOME..."
+
+    for cmd in "${gsettings[@]}"; do
+        log "→ $cmd"
+        bash -c "$cmd"
+    done
+}
+
 executar_comandos_avulsos() {
     log "Executando comandos avulsos..."
 
@@ -188,8 +193,8 @@ main() {
 
     case "${1:-tudo}" in
         pacotes)
-            instalar_pacotes_fn
-            remover_pacotes_fn
+            instalar_pacotes
+            remover_pacotes
             ;;
         repos)
             clonar_repositorios
@@ -202,6 +207,7 @@ main() {
         configs)
             customizar_grub
             configurar_sudo
+            aplicar_gsettings
             ;;
         tudo)
             instalar_pacotes_fn
