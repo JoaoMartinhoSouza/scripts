@@ -22,23 +22,23 @@ pacotes=(
 )
 
 pacotes_remover=(
-	evolution
-	gnome-clocks
-	gnome-contacts
-	gnome-maps
-	gnome-music
-	gnome-snapshot
-	gnome-sound-recorder
-	gnome-tour
-	gnome-tweaks
-	gnome-weather
-	shotwell
+    evolution
+    gnome-clocks
+    gnome-contacts
+    gnome-maps
+    gnome-music
+    gnome-snapshot
+    gnome-sound-recorder
+    gnome-tour
+    gnome-tweaks
+    gnome-weather
+    shotwell
 )
 
 repositorios=(
-	"https://github.com/JoaoMartinhoSouza/epub-cleaner.git|/home/jms/Área de trabalho/Epub Cleaner"
-    	"https://github.com/JoaoMartinhoSouza/joaomartinhosouza.github.io.git|/home/jms/Área de trabalho/Página pessoal"
-    	"https://github.com/JoaoMartinhoSouza/scripts.git|/home/jms/Área de trabalho/Scripts"
+    "https://github.com/JoaoMartinhoSouza/epub-cleaner.git|/home/jms/Área de trabalho/Epub Cleaner"
+    "https://github.com/JoaoMartinhoSouza/joaomartinhosouza.github.io.git|/home/jms/Área de trabalho/Página pessoal"
+    "https://github.com/JoaoMartinhoSouza/scripts.git|/home/jms/Área de trabalho/Scripts"
 )
 
 backup_itens=(
@@ -46,16 +46,15 @@ backup_itens=(
     "/media/jms/Backup/.git-credentials|/home/jms/.git-credentials|arquivo"
     "/media/jms/Backup/.gitconfig|/home/jms/.gitconfig|arquivo"
     "/media/jms/Backup/Documentos|/home/jms/Documentos|conteudo"
-    "/media/jms/Backup/Documentos/custom.cfg|/boot/grub/custom.cfg|arquivo"
     "/media/jms/Backup/Imagens|/home/jms/Imagens|conteudo"
     "/media/jms/Backup/Modelos|/home/jms/Modelos|conteudo"
     "/media/jms/Backup/Temporário|/home/jms/Área de trabalho|pasta"
 )
 
 gsettings=(
-	"gsettings set org.gnome.desktop.interface clock-show-weekday true"
-	"gsettings set org.gnome.mutter center-new-windows true"
-	"gsettings set org.gnome.desktop.wm.preferences action-right-click-titlebar 'toggle-maximize'"
+    "gsettings set org.gnome.desktop.interface clock-show-weekday true"
+    "gsettings set org.gnome.mutter center-new-windows true"
+    "gsettings set org.gnome.desktop.wm.preferences action-right-click-titlebar 'toggle-maximize'"
 )
 
 comandos_avulsos=(
