@@ -211,13 +211,14 @@ main() {
             aplicar_gsettings
             ;;
         tudo)
-            instalar_pacotes_fn
-            remover_pacotes_fn
+            instalar_pacotes
+            remover_pacotes
             clonar_repositorios
             restaurar_backup
             customizar_grub
             configurar_sudo
             executar_comandos_avulsos
+            aplicar_gsettings
             corrigir_permissoes_home
             ;;
         *)
