@@ -8,6 +8,7 @@ pacotes=(
     deluge
     exiftool
     ffmpeg
+    foliate
     fortune
     gcolor3
     git
