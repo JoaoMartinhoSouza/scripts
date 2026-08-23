@@ -27,8 +27,7 @@ if [ ! -d "$USB_DIR" ]; then
 fi
 
 echo "----------------------------------------"
-
-echo "Enviando arquivos do LOCAL para o HD EXTERNO..."
+echo "Enviando e removendo arquivos do LOCAL para o HD EXTERNO..."
 SRC="$LOCAL_DIR"
 DEST="$USB_DIR"
 
@@ -36,7 +35,7 @@ echo "Origem: $SRC"
 echo "Destino: $DEST"
 echo "----------------------------------------"
 
-rsync -av --no-progress "$SRC"/ "$DEST"/
+rsync -av --no-progress --remove-source-files "$SRC"/ "$DEST"/
 
 STATUS=$?
 
@@ -44,8 +43,14 @@ echo "----------------------------------------"
 
 if [ $STATUS -eq 0 ]; then
     echo "Transferência concluída com sucesso."
+    
+    # Remove as pastas vazias que sobraram na origem
+    echo "Limpando pastas vazias no diretório de origem..."
+    find "$SRC" -mindepth 1 -type d -empty -delete
+    
+    echo "Limpeza concluída."
 else
-    echo "Ocorreu um erro durante a transferência."
+    echo "Ocorreu um erro durante a transferência. Os arquivos originais foram mantidos por segurança."
 fi
 
 echo "----------------------------------------"
