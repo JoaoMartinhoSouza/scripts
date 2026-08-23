@@ -7,6 +7,7 @@ pacotes=(
     cowsay
     curl
     deluge
+    drawing
     exiftool
     ffmpeg
     foliate
@@ -18,6 +19,7 @@ pacotes=(
     lolcat
     mkvtoolnix
     rsync
+    thunderbird
     wget
     xmlstarlet
 )
