@@ -4,19 +4,15 @@ set -euo pipefail
 
 pacotes=(
     apostrophe
-    cowsay
     curl
     deluge
-    drawing
     exiftool
     ffmpeg
     foliate
-    fortune
     gcolor3
     git
     imagemagick
     libreoffice-l10n-pt-br
-    lolcat
     mkvtoolnix
     rsync
     thunderbird
