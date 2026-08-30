@@ -44,7 +44,6 @@ echo "----------------------------------------"
 if [ $STATUS -eq 0 ]; then
     echo "Transferência concluída com sucesso."
     
-    # Remove as pastas vazias que sobraram na origem
     echo "Limpando pastas vazias no diretório de origem..."
     find "$SRC" -mindepth 1 -type d -empty -delete
     
