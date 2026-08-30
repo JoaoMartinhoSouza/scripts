@@ -28,29 +28,56 @@ fi
 
 echo "----------------------------------------"
 echo "Enviando e removendo arquivos do LOCAL para o HD EXTERNO..."
-SRC="$LOCAL_DIR"
-DEST="$USB_DIR"
-
-echo "Origem: $SRC"
-echo "Destino: $DEST"
+echo "Origem: $LOCAL_DIR"
+echo "Destino: $USB_DIR"
 echo "----------------------------------------"
 
-rsync -av --no-progress --remove-source-files "$SRC"/ "$DEST"/
+ERRO_GERAL=0
 
-STATUS=$?
+if [ "$1" = "series" ]; then
+    rsync -av --no-progress --remove-source-files "$LOCAL_DIR"/ "$USB_DIR"/
+    ERRO_GERAL=$?
+else
+    for item in "$LOCAL_DIR"/*; do
+        [ -e "$item" ] || continue
+        
+        nome_item=$(basename "$item")
+        
+        if [ -f "$item" ]; then
+            rsync -av --no-progress --remove-source-files "$item" "$USB_DIR"/
+            if [ $? -ne 0 ]; then ERRO_GERAL=1; fi
+            
+        elif [ -d "$item" ]; then
+            primeiro_char="${nome_item:0:1}"
+            
+            if [[ "$primeiro_char_upper" =~ ^[A-Z]$ ]]; then
+                LETRA_DIR="$USB_DIR/$primeiro_char_upper"
+            else
+                LETRA_DIR="$USB_DIR/#"
+            fi
+            
+            rsync -av --no-progress --remove-source-files "$item"/ "$LETRA_DIR/$nome_item"/
+            if [ $? -ne 0 ]; then
+                ERRO_GERAL=1
+            else
+            
+                find "$item" -depth -empty -delete
+            fi
+        fi
+    done
+fi
 
 echo "----------------------------------------"
 
-if [ $STATUS -eq 0 ]; then
+if [ $ERRO_GERAL -eq 0 ]; then
     echo "Transferência concluída com sucesso."
     
-    # Remove as pastas vazias que sobraram na origem
     echo "Limpando pastas vazias no diretório de origem..."
-    find "$SRC" -mindepth 1 -type d -empty -delete
+    find "$LOCAL_DIR" -mindepth 1 -type d -empty -delete
     
     echo "Limpeza concluída."
 else
-    echo "Ocorreu um erro durante a transferência. Os arquivos originais foram mantidos por segurança."
+    echo "Ocorreu um erro durante a transferência. Alguns arquivos originais podem ter sido mantidos."
 fi
 
 echo "----------------------------------------"
