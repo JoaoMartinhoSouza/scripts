@@ -35,32 +35,54 @@ echo "----------------------------------------"
 ERRO_GERAL=0
 
 if [ "$1" = "series" ]; then
-    rsync -av --no-progress --remove-source-files "$LOCAL_DIR"/ "$USB_DIR"/
+
+    rsync -av --no-progress --remove-source-files \
+        "$LOCAL_DIR"/ "$USB_DIR"/
+
     ERRO_GERAL=$?
+
 else
+
     for item in "$LOCAL_DIR"/*; do
         [ -e "$item" ] || continue
-        
+
         nome_item=$(basename "$item")
-        
+
         if [ -f "$item" ]; then
-            rsync -av --no-progress --remove-source-files "$item" "$USB_DIR"/
-            if [ $? -ne 0 ]; then ERRO_GERAL=1; fi
-            
+
+            rsync -av --no-progress --remove-source-files \
+                "$item" "$USB_DIR"/
+
+            if [ $? -ne 0 ]; then
+                ERRO_GERAL=1
+            fi
+
         elif [ -d "$item" ]; then
+
             primeiro_char="${nome_item:0:1}"
-            
+            primeiro_char_upper="${primeiro_char^^}"
+
             if [[ "$primeiro_char_upper" =~ ^[A-Z]$ ]]; then
                 LETRA_DIR="$USB_DIR/$primeiro_char_upper"
             else
                 LETRA_DIR="$USB_DIR/#"
             fi
-            
-            rsync -av --no-progress --remove-source-files "$item"/ "$LETRA_DIR/$nome_item"/
+
+            # Garante que a pasta da letra exista
+            mkdir -p "$LETRA_DIR"
+
+            if [ $? -ne 0 ]; then
+                echo "Erro: não foi possível criar: $LETRA_DIR"
+                ERRO_GERAL=1
+                continue
+            fi
+
+            rsync -av --no-progress --remove-source-files \
+                "$item/" "$LETRA_DIR/$nome_item/"
+
             if [ $? -ne 0 ]; then
                 ERRO_GERAL=1
             else
-            
                 find "$item" -depth -empty -delete
             fi
         fi
@@ -71,13 +93,14 @@ echo "----------------------------------------"
 
 if [ $ERRO_GERAL -eq 0 ]; then
     echo "Transferência concluída com sucesso."
-    
+
     echo "Limpando pastas vazias no diretório de origem..."
     find "$LOCAL_DIR" -mindepth 1 -type d -empty -delete
-    
+
     echo "Limpeza concluída."
 else
     echo "Ocorreu um erro durante a transferência. Alguns arquivos originais podem ter sido mantidos."
 fi
 
 echo "----------------------------------------"
+
