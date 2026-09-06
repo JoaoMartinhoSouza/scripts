@@ -50,6 +50,7 @@ while IFS= read -r -d $'\0' f; do
             -c copy \
             -disposition:v:0 0 \
             -map_metadata -1 \
+            -map_metadata:s -1 \
             -map_chapters -1 \
             -metadata title= \
             -metadata:s:a:0 language=und \
