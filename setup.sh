@@ -6,6 +6,7 @@ pacotes=(
     apostrophe
     curl
     deluge
+    drawing
     exiftool
     ffmpeg
     foliate
