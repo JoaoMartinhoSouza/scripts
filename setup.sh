@@ -139,13 +139,9 @@ restaurar_backup() {
     done
 }
 
-customizar_grub() {
-    local arquivo="/etc/default/grub"
-
-    sed -i '/^#\?\s*GRUB_BACKGROUND=/d' "$arquivo"
-    echo "GRUB_BACKGROUND=''" >> "$arquivo"
-
-    sudo update-grub
+corrigir_permissoes_home() {
+    log "Corrigindo permissões de /home/jms..."
+    chown -R jms:jms /home/jms
 }
 
 configurar_sudo() {
@@ -175,6 +171,15 @@ aplicar_gsettings() {
     done
 }
 
+customizar_grub() {
+    local arquivo="/etc/default/grub"
+
+    sed -i '/^#\?\s*GRUB_BACKGROUND=/d' "$arquivo"
+    echo "GRUB_BACKGROUND=''" >> "$arquivo"
+
+    sudo update-grub
+}
+
 executar_comandos_avulsos() {
     log "Executando comandos avulsos..."
 
@@ -182,11 +187,6 @@ executar_comandos_avulsos() {
         log "→ $cmd"
         bash -c "$cmd"
     done
-}
-
-corrigir_permissoes_home() {
-    log "Corrigindo permissões de /home/jms..."
-    chown -R jms:jms /home/jms
 }
 
 main() {
@@ -206,20 +206,20 @@ main() {
             corrigir_permissoes_home
             ;;
         configs)
-            customizar_grub
             configurar_sudo
             aplicar_gsettings
+            customizar_grub
             ;;
         tudo)
             instalar_pacotes
             remover_pacotes
             clonar_repositorios
             restaurar_backup
-            customizar_grub
-            configurar_sudo
-            executar_comandos_avulsos
-            aplicar_gsettings
             corrigir_permissoes_home
+            configurar_sudo
+            aplicar_gsettings
+            customizar_grub
+            executar_comandos_avulsos
             ;;
         *)
             echo "Uso: $0 [pacotes|repos|backup|configs|tudo]"
