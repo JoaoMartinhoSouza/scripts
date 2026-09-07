@@ -68,7 +68,6 @@ else
                 LETRA_DIR="$USB_DIR/#"
             fi
 
-            # Garante que a pasta da letra exista
             mkdir -p "$LETRA_DIR"
 
             if [ $? -ne 0 ]; then
@@ -103,4 +102,3 @@ else
 fi
 
 echo "----------------------------------------"
-
