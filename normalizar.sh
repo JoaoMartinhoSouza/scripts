@@ -24,11 +24,13 @@ while IFS= read -r -d $'\0' f; do
             --no-global-tags \
             --no-attachments \
             --no-subtitles \
+            --update-track-statistics-on-muxing yes \
             "${audio_args[@]}" \
             "$f"
 
         status=$?
         if [ $status -eq 0 ] || [ $status -eq 1 ]; then
+            mkvpropedit "$tmp" --edit track:v1 --set name="" --edit track:a1 --set name="" >/dev/null 2>&1
             mv -f "$tmp" "$f"
             echo "Sucesso (MKV): $f"
         else
