@@ -45,7 +45,6 @@ while IFS= read -r -d $'\0' f; do
                 ext_lower="${ext,,}"
                 tmp="${f%.*}.tmp.${ext_lower}"
 
-                # Executa o ffmpeg engolindo erros de execução direta
                 ffmpeg -nostdin -v error -y \
                     -i "$f" \
                     -map 0:v:0 \
@@ -71,7 +70,6 @@ while IFS= read -r -d $'\0' f; do
                 ;;
         esac
     } || {
-        # Caso ocorra qualquer exceção inesperada dentro do bloco principal
         echo "Erro inesperado ao processar: $f (continuando...)"
         rm -f "${f%.*}.tmp."* 2>/dev/null || true
     }
