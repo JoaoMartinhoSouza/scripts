@@ -12,6 +12,7 @@ pacotes=(
     foliate
     gcolor3
     git
+    gnome-video-trimmer
     imagemagick
     libreoffice-l10n-pt-br
     mkvtoolnix
