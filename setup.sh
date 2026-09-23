@@ -38,7 +38,7 @@ pacotes_remover=(
 
 repositorios=(
     "https://github.com/JoaoMartinhoSouza/epub-cleaner.git|/home/jms/Área de trabalho/Epub Cleaner"
-    "https://github.com/JoaoMartinhoSouza/joaomartinhosouza.github.io.git|/home/jms/Área de trabalho/Página pessoal"
+    "https://github.com/JoaoMartinhoSouza/pagina-pessoal.git|/home/jms/Área de trabalho/Página pessoal"
     "https://github.com/JoaoMartinhoSouza/scripts.git|/home/jms/Área de trabalho/Scripts"
 )
 
