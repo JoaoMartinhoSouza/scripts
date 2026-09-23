@@ -54,6 +54,7 @@ backup_itens=(
 
 gsettings=(
     "gsettings set org.gnome.desktop.interface clock-show-weekday true"
+    "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
     "gsettings set org.gnome.mutter center-new-windows true"
     "gsettings set org.gnome.desktop.wm.preferences action-right-click-titlebar 'toggle-maximize'"
 )
@@ -61,6 +62,7 @@ gsettings=(
 comandos_avulsos=(
     "rm /home/jms/.face"
     "rm /home/jms/.face.icon"
+    "gpg --import /home/jms/Documentos/PGP/jms-sec.asc"
 )
 
 log() {
