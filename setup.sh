@@ -6,18 +6,16 @@ pacotes=(
     apostrophe
     curl
     exiftool
+    deluge
+    drawing
     ffmpeg
-    flatpak
     foliate
     git
-    gnome-console
-    gnome-software-plugin-flatpak
+    gcolor3
     gnome-video-trimmer
     imagemagick
     mkvtoolnix
-    papers
     rsync
-    showtime
     thunderbird
     wget
     xmlstarlet
@@ -25,7 +23,6 @@ pacotes=(
 
 pacotes_remover=(
     *libreoffice*
-    evince
     evolution
     gnome-clocks
     gnome-contacts
@@ -34,7 +31,6 @@ pacotes_remover=(
     gnome-music
     gnome-snapshot
     gnome-sound-recorder
-    gnome-terminal
     gnome-tour
     gnome-tweaks
     gnome-weather
@@ -42,7 +38,6 @@ pacotes_remover=(
     seahorse
     simple-scan
     shotwell
-    totem
 )
 
 repositorios=(
@@ -64,16 +59,10 @@ backup_itens=(
 comandos_avulsos=(
     # GSettings
     "gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/gnome/morphogenesis-l.svg"
-    "gsettings range org.gnome.desktop.interface accent-color 'slate'"
     "gsettings set org.gnome.desktop.interface clock-show-weekday true"
     "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
     "gsettings set org.gnome.mutter center-new-windows true"
     "gsettings set org.gnome.desktop.wm.preferences action-right-click-titlebar 'toggle-maximize'"
-    
-    # Flatpak
-    "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
-    "flatpak install com.github.finefindus.eyedropper"
-    "flatpak install io.github.giantpinkrobots.varia"
     
     # Outros
     "rm /home/jms/.face"
