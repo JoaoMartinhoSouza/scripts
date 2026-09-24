@@ -217,7 +217,6 @@ main() {
             ;;
         configs)
             configurar_sudo
-            aplicar_gsettings
             customizar_grub
             ;;
         tudo)
