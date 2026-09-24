@@ -5,36 +5,44 @@ set -euo pipefail
 pacotes=(
     apostrophe
     curl
-    deluge
-    drawing
     exiftool
     ffmpeg
+    flatpak
     foliate
-    gcolor3
     git
+    gnome-console
+    gnome-software-plugin-flatpak
     gnome-video-trimmer
-    gpaste-2
     imagemagick
-    libreoffice-l10n-pt-br
     mkvtoolnix
+    papers
     rsync
+    showtime
     thunderbird
     wget
     xmlstarlet
 )
 
 pacotes_remover=(
+    *libreoffice*
+    evince
     evolution
     gnome-clocks
     gnome-contacts
+    gnome-logs
     gnome-maps
     gnome-music
     gnome-snapshot
     gnome-sound-recorder
+    gnome-terminal
     gnome-tour
     gnome-tweaks
     gnome-weather
+    malcontent
+    seahorse
+    simple-scan
     shotwell
+    totem
 )
 
 repositorios=(
@@ -53,16 +61,21 @@ backup_itens=(
     "/media/jms/Backup/Temporário|/home/jms/Área de trabalho|pasta"
 )
 
-gsettings=(
+comandos_avulsos=(
+    # GSettings
     "gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/gnome/morphogenesis-l.svg"
     "gsettings range org.gnome.desktop.interface accent-color 'slate'"
     "gsettings set org.gnome.desktop.interface clock-show-weekday true"
     "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
     "gsettings set org.gnome.mutter center-new-windows true"
     "gsettings set org.gnome.desktop.wm.preferences action-right-click-titlebar 'toggle-maximize'"
-)
-
-comandos_avulsos=(
+    
+    # Flatpak
+    "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+    "flatpak install com.github.finefindus.eyedropper"
+    "flatpak install io.github.giantpinkrobots.varia"
+    
+    # Outros
     "rm /home/jms/.face"
     "rm /home/jms/.face.icon"
     "gpg --import /home/jms/Documentos/PGP/jms-sec.asc"
@@ -168,15 +181,6 @@ configurar_sudo() {
     chmod 440 "$defaults_file"
 }
 
-aplicar_gsettings() {
-    log "Aplicando configurações do GNOME..."
-
-    for cmd in "${gsettings[@]}"; do
-        log "→ $cmd"
-        bash -c "$cmd"
-    done
-}
-
 customizar_grub() {
     local arquivo="/etc/default/grub"
 
@@ -223,7 +227,6 @@ main() {
             restaurar_backup
             corrigir_permissoes_home
             configurar_sudo
-            aplicar_gsettings
             customizar_grub
             executar_comandos_avulsos
             ;;
