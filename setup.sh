@@ -13,6 +13,7 @@ pacotes=(
     gcolor3
     git
     gnome-video-trimmer
+    gpaste-2
     imagemagick
     libreoffice-l10n-pt-br
     mkvtoolnix
@@ -53,6 +54,7 @@ backup_itens=(
 )
 
 gsettings=(
+    "gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/gnome/morphogenesis-l.svg"
     "gsettings range org.gnome.desktop.interface accent-color 'slate'"
     "gsettings set org.gnome.desktop.interface clock-show-weekday true"
     "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
