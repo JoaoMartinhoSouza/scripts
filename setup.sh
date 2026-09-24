@@ -53,7 +53,6 @@ backup_itens=(
 )
 
 gsettings=(
-    "gsettings range org.gnome.desktop.interface accent-color 'slate'"
     "gsettings set org.gnome.desktop.interface clock-show-weekday true"
     "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
     "gsettings set org.gnome.mutter center-new-windows true"
