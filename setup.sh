@@ -15,8 +15,6 @@ pacotes=(
     gnome-console
     gnome-video-trimmer
     imagemagick
-    libreoffice-gtk4
-    libreoffice-l10n-pt-br
     mkvtoolnix
     papers
     rsync
@@ -41,9 +39,7 @@ pacotes_remover=(
     gnome-tour
     gnome-tweaks
     gnome-weather
-    libreoffice-base
-    libreoffice-core
-    libreoffice-gnome
+    libreoffice*
     malcontent
     seahorse
     simple-scan
@@ -58,9 +54,17 @@ repositorios=(
 )
 
 backup_itens=(
+    # Arquivos
     "/media/jms/Backup/.bash_aliases|/home/jms/.bash_aliases|arquivo"
     "/media/jms/Backup/.git-credentials|/home/jms/.git-credentials|arquivo"
     "/media/jms/Backup/.gitconfig|/home/jms/.gitconfig|arquivo"
+    
+    # Configurações
+    "/media/jms/Backup/Dotfiles/.mozilla|/home/jms|pasta"
+    "/media/jms/Backup/Dotfiles/.thunderbird|/home/jms|pasta"
+    "/media/jms/Backup/Dotfiles/libreoffice|/home/jms/.config|pasta"
+    
+    # Outros
     "/media/jms/Backup/Documentos|/home/jms/Documentos|conteudo"
     "/media/jms/Backup/Imagens|/home/jms/Imagens|conteudo"
     "/media/jms/Backup/Modelos|/home/jms/Modelos|conteudo"
@@ -69,11 +73,14 @@ backup_itens=(
 
 comandos_avulsos=(
     # GSettings
-    "gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/gnome/map-l.svg"
+    "gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/gnome/pixels-l.svg"
     "gsettings set org.gnome.desktop.interface clock-show-weekday true"
     "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
     "gsettings set org.gnome.mutter center-new-windows true"
     "gsettings set org.gnome.desktop.wm.preferences action-right-click-titlebar 'toggle-maximize'"
+    
+    # LibreOffice
+    "sudo apt install libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-gnome libreoffice-l10n-pt-br"
     
     # Outros
     "rm /home/jms/.face"
