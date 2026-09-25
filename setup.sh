@@ -12,17 +12,22 @@ pacotes=(
     foliate
     git
     gcolor3
+    gnome-console
     gnome-video-trimmer
     imagemagick
+    libreoffice-gtk4
     libreoffice-l10n-pt-br
     mkvtoolnix
+    papers
     rsync
+    showtime
     thunderbird
     wget
     xmlstarlet
 )
 
 pacotes_remover=(
+    evince
     evolution
     gnome-clocks
     gnome-connections
@@ -32,13 +37,18 @@ pacotes_remover=(
     gnome-music
     gnome-snapshot
     gnome-sound-recorder
+    gnome-terminal
     gnome-tour
     gnome-tweaks
     gnome-weather
+    libreoffice-base
+    libreoffice-core
+    libreoffice-gnome
     malcontent
     seahorse
     simple-scan
     shotwell
+    totem
 )
 
 repositorios=(
