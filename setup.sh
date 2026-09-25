@@ -14,6 +14,7 @@ pacotes=(
     gcolor3
     gnome-video-trimmer
     imagemagick
+    libreoffice-l10n-pt-br
     mkvtoolnix
     rsync
     thunderbird
@@ -22,9 +23,9 @@ pacotes=(
 )
 
 pacotes_remover=(
-    *libreoffice*
     evolution
     gnome-clocks
+    gnome-connections
     gnome-contacts
     gnome-logs
     gnome-maps
