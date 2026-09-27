@@ -74,6 +74,7 @@ backup_itens=(
 comandos_avulsos=(
     # GSettings
     "gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/gnome/pixels-l.svg"
+    "gsettings set org.gnome.desktop.interface accent-color 'slate'"
     "gsettings set org.gnome.desktop.interface clock-show-weekday true"
     "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
     "gsettings set org.gnome.mutter center-new-windows true"
