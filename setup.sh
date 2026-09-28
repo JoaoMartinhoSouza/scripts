@@ -62,6 +62,7 @@ backup_itens=(
     # Configurações
     "/media/jms/Backup/Dotfiles/.mozilla|/home/jms|pasta"
     "/media/jms/Backup/Dotfiles/.thunderbird|/home/jms|pasta"
+    "/media/jms/Backup/Dotfiles/deluge|/home/jms/.config|pasta"
     "/media/jms/Backup/Dotfiles/libreoffice|/home/jms/.config|pasta"
     
     # Outros
