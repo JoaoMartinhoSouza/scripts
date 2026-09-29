@@ -210,39 +210,15 @@ executar_comandos_avulsos() {
 
 main() {
     checar_root
-
-    case "${1:-tudo}" in
-        pacotes)
-            instalar_pacotes
-            remover_pacotes
-            ;;
-        repos)
-            clonar_repositorios
-            corrigir_permissoes_home
-            ;;
-        backup)
-            restaurar_backup
-            corrigir_permissoes_home
-            ;;
-        configs)
-            configurar_sudo
-            customizar_grub
-            ;;
-        tudo)
-            instalar_pacotes
-            remover_pacotes
-            clonar_repositorios
-            restaurar_backup
-            corrigir_permissoes_home
-            configurar_sudo
-            customizar_grub
-            executar_comandos_avulsos
-            ;;
-        *)
-            echo "Uso: $0 [pacotes|repos|backup|configs|tudo]"
-            exit 1
-            ;;
-    esac
+    
+    instalar_pacotes
+    remover_pacotes
+    clonar_repositorios
+    restaurar_backup
+    corrigir_permissoes_home
+    configurar_sudo
+    customizar_grub
+    executar_comandos_avulsos
 
     log "Processo concluído."
 }
