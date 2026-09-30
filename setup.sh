@@ -75,12 +75,24 @@ backup_itens=(
 
 comandos_avulsos=(
     # GSettings
+    ## Comportamento e aparência
     "gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/gnome/pixels-l.svg"
     "gsettings set org.gnome.desktop.interface accent-color 'slate'"
     "gsettings set org.gnome.desktop.interface clock-show-weekday true"
     "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
-    "gsettings set org.gnome.mutter center-new-windows true"
     "gsettings set org.gnome.desktop.wm.preferences action-right-click-titlebar 'toggle-maximize'"
+    "gsettings set org.gnome.mutter center-new-windows true"
+    
+    ## Luz noturna
+    "gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true"
+    "gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false"
+    "gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 18"
+    "gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 18"
+    "gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 3700"
+    
+    ## Energia
+    "gsettings set org.gnome.desktop.session idle-delay 0"
+    "gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'"
     
     # LibreOffice
     "sudo apt install libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-gnome libreoffice-l10n-pt-br"
