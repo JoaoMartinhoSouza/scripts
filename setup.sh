@@ -66,6 +66,7 @@ backup_itens=(
     "/media/jms/Backup/Dotfiles/libreoffice|/home/jms/.config|pasta"
     
     # Outros
+    "/media/jms/Backup/Concurso|/home/jms/Área de trabalho|pasta"
     "/media/jms/Backup/Documentos|/home/jms/Documentos|conteudo"
     "/media/jms/Backup/Imagens|/home/jms/Imagens|conteudo"
     "/media/jms/Backup/Modelos|/home/jms/Modelos|conteudo"
