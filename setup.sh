@@ -16,9 +16,9 @@ pacotes=(
     gnome-video-trimmer
     imagemagick
     mkvtoolnix
+    mpv
     papers
     rsync
-    showtime
     thunderbird
     wget
     xmlstarlet
