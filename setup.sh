@@ -59,13 +59,7 @@ backup_itens=(
     "/media/jms/Backup/.git-credentials|/home/jms/.git-credentials|arquivo"
     "/media/jms/Backup/.gitconfig|/home/jms/.gitconfig|arquivo"
     
-    # Configurações
-    "/media/jms/Backup/Dotfiles/.mozilla|/home/jms|pasta"
-    "/media/jms/Backup/Dotfiles/.thunderbird|/home/jms|pasta"
-    "/media/jms/Backup/Dotfiles/deluge|/home/jms/.config|pasta"
-    "/media/jms/Backup/Dotfiles/libreoffice|/home/jms/.config|pasta"
-    
-    # Outros
+    # Pastas
     "/media/jms/Backup/Concurso|/home/jms/Área de trabalho|pasta"
     "/media/jms/Backup/Documentos|/home/jms/Documentos|conteudo"
     "/media/jms/Backup/Imagens|/home/jms/Imagens|conteudo"
@@ -94,19 +88,11 @@ comandos_avulsos=(
     "gsettings set org.gnome.desktop.session idle-delay 0"
     "gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'"
     
-    # LibreOffice
-    "sudo apt install libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-gnome libreoffice-l10n-pt-br"
-    
-    # GnuPG
-    "gpg --import /home/jms/Documentos/PGP/chave-privada.asc"
-    "gpg --import /home/jms/Documentos/PGP/jms.asc"
-    "gpg --import /home/jms/Documentos/PGP/andre.asc"
-    "gpg --import /home/jms/Documentos/PGP/jipege.asc"
-    "gpg --import /home/jms/Documentos/PGP/phls.asc"
-    
     # Outros
+    "gpg --import /home/jms/Documentos/PGP*.asc"
     "rm /home/jms/.face"
     "rm /home/jms/.face.icon"
+    "sudo apt install libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-gnome libreoffice-l10n-pt-br"
 )
 
 log() {
