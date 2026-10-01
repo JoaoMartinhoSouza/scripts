@@ -97,10 +97,16 @@ comandos_avulsos=(
     # LibreOffice
     "sudo apt install libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-gnome libreoffice-l10n-pt-br"
     
+    # GnuPG
+    "gpg --import /home/jms/Documentos/PGP/chave-privada.asc"
+    "gpg --import /home/jms/Documentos/PGP/jms.asc"
+    "gpg --import /home/jms/Documentos/PGP/andre.asc"
+    "gpg --import /home/jms/Documentos/PGP/jipege.asc"
+    "gpg --import /home/jms/Documentos/PGP/phls.asc"
+    
     # Outros
     "rm /home/jms/.face"
     "rm /home/jms/.face.icon"
-    "gpg --import /home/jms/Documentos/PGP/jms-sec.asc"
 )
 
 log() {
