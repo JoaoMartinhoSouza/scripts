@@ -48,23 +48,23 @@ pacotes_remover=(
 )
 
 repositorios=(
-    "https://github.com/JoaoMartinhoSouza/epub-cleaner.git|/home/jms/Área de trabalho/Epub Cleaner"
-    "https://github.com/JoaoMartinhoSouza/pagina-pessoal.git|/home/jms/Área de trabalho/Página pessoal"
-    "https://github.com/JoaoMartinhoSouza/scripts.git|/home/jms/Área de trabalho/Scripts"
+    "https://github.com/joao-martinho/epub-cleaner.git|/home/joao/Área de trabalho/Epub Cleaner"
+    "https://github.com/joao-martinho/pagina-pessoal.git|/home/joao/Área de trabalho/Página pessoal"
+    "https://github.com/joao-martinho/scripts.git|/home/joao/Área de trabalho/Scripts"
 )
 
 backup_itens=(
     # Arquivos
-    "/media/jms/Backup/.bash_aliases|/home/jms/.bash_aliases|arquivo"
-    "/media/jms/Backup/.git-credentials|/home/jms/.git-credentials|arquivo"
-    "/media/jms/Backup/.gitconfig|/home/jms/.gitconfig|arquivo"
+    "/media/joao/Backup/.bash_aliases|/home/joao/.bash_aliases|arquivo"
+    "/media/joao/Backup/.git-credentials|/home/joao/.git-credentials|arquivo"
+    "/media/joao/Backup/.gitconfig|/home/joao/.gitconfig|arquivo"
     
     # Pastas
-    "/media/jms/Backup/Concurso|/home/jms/Área de trabalho|pasta"
-    "/media/jms/Backup/Documentos|/home/jms/Documentos|conteudo"
-    "/media/jms/Backup/Imagens|/home/jms/Imagens|conteudo"
-    "/media/jms/Backup/Modelos|/home/jms/Modelos|conteudo"
-    "/media/jms/Backup/Temporário|/home/jms/Área de trabalho|pasta"
+    "/media/joao/Backup/Concurso|/home/joao/Área de trabalho|pasta"
+    "/media/joao/Backup/Documentos|/home/joao/Documentos|conteudo"
+    "/media/joao/Backup/Imagens|/home/joao/Imagens|conteudo"
+    "/media/joao/Backup/Modelos|/home/joao/Modelos|conteudo"
+    "/media/joao/Backup/Temporário|/home/joao/Área de trabalho|pasta"
 )
 
 comandos_avulsos=(
@@ -80,8 +80,8 @@ comandos_avulsos=(
     ## Luz noturna
     "gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true"
     "gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-automatic false"
-    "gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 18"
-    "gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 18"
+    "gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-from 20"
+    "gsettings set org.gnome.settings-daemon.plugins.color night-light-schedule-to 20"
     "gsettings set org.gnome.settings-daemon.plugins.color night-light-temperature 3700"
     
     ## Energia
@@ -89,9 +89,9 @@ comandos_avulsos=(
     "gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'"
     
     # Outros
-    "gpg --import /home/jms/Documentos/PGP*.asc"
-    "rm /home/jms/.face"
-    "rm /home/jms/.face.icon"
+    "gpg --import /home/joao/Documentos/PGP/*.asc"
+    "rm /home/joao/.face"
+    "rm /home/joao/.face.icon"
     "sudo apt install libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-gnome libreoffice-l10n-pt-br"
 )
 
@@ -173,15 +173,15 @@ restaurar_backup() {
 }
 
 corrigir_permissoes_home() {
-    log "Corrigindo permissões de /home/jms..."
-    chown -R jms:jms /home/jms
+    log "Corrigindo permissões de /home/joao..."
+    chown -R joao:joao /home/joao
 }
 
 configurar_sudo() {
-    local user_file="/etc/sudoers.d/jms"
+    local user_file="/etc/sudoers.d/joao"
     local defaults_file="/etc/sudoers.d/00-custom"
 
-    echo "jms ALL=(ALL:ALL) ALL" > "$user_file"
+    echo "joao ALL=(ALL:ALL) ALL" > "$user_file"
     chmod 440 "$user_file"
 
     touch "$defaults_file"

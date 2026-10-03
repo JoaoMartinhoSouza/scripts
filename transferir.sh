@@ -1,7 +1,7 @@
 #!/bin/bash
 
-LOCAL_DIR="/home/jms/Vídeos"
-BASE_USB_DIR="/media/jms/Videoteca"
+LOCAL_DIR="/home/joao/Vídeos"
+BASE_USB_DIR="/media/joao/Videoteca"
 
 if [ "$1" != "series" ] && [ "$1" != "filmes" ] && [ "$1" != "animacoes" ]; then
     echo "Uso: $0 [series|filmes|animacoes]"
